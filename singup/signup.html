@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./signup.css">
+
+    <title>signUp</title>
+</head>
+<body>
+    <nav>
+        <div>
+            <span>MeShop.</span>
+        </div>
+        <div class="links">
+            <a href="../index.html">Home</a>
+            <a href="../loginpage/login.html">Login</a>
+            <a href="#">Signup</a>
+            <a href="../loginpage/login.html">My Cart</a>
+        </div>
+    </nav>
+    <form class="login-details">
+        <p>Signup</p>
+        <input type="text" id="firstname" placeholder="First Name *" required>
+        <input type="text" id="lastname" placeholder="Last Name *" required>
+        <input type="email"  id="email" placeholder="Enter email *" required>
+        <input type="password"  id="password" placeholder="Enter password *" required>
+        <input type="password"  id="confirmPassword" placeholder="Confirm Password *" required>
+         <div id="error"></div>
+         <div id="success">signup successfully</div>
+        <button id="signup" type="submit">Signup</button>
+    </form>
+
+    <script src="./signup.js"></script>
+</body>
+</html>

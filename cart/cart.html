@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Cart</title>
+    <link rel="stylesheet" href="cart.css" />
+  </head>
+  <body>
+    <nav>
+      <div class="brand">
+        <a href="../shop/shop.html">Meshop.</a>
+      </div>
+      <div class="nav-items">
+        <a href="../index.html">Home</a>
+        <a href="../loginpage/login.html">Login</a>
+        <a href="../singup/signup.html">Signup</a>
+        <a href="#">My Cart</a>
+        <a href="../profile/profile.html">profile</a>
+      </div>
+    </nav>
+    <div class="mycart">My Cart</div>
+    <div id="empty"></div>
+    <main>
+      <div class="itemsList" id="itemsList">
+              <div class="itemcontainer" id="item">
+                  <img src="./tshirt.png" alt="">
+                  <div class="info">
+                      <p>Title : shirt</p>
+                      <p>price : 100</p>
+                  </div>
+                  
+                  <button>Remove from cart</button>
+              </div>
+              <div class="itemcontainer">
+                  <img src="./tshirt.png" alt="">
+                  <div class="info">
+                      <p>Title : shirt</p>
+                      <p>price : 100</p>
+                  </div>
+                  
+                  <button>Remove from cart</button>
+              </div>
+              <div class="itemcontainer">
+                  <img src="./tshirt.png" alt="">
+                  <div class="info">
+                      <p>Title : shirt</p>
+                      <p>price : 100</p>
+                  </div>
+                  
+                  <button>Remove from cart</button>
+              </div>
+              <div class="itemcontainer">
+                  <img src="./tshirt.png" alt="">
+                  <div class="info">
+                      <p>Title : shirt</p>
+                      <p>price : 100</p>
+                  </div>
+                  
+                  <button>Remove from cart</button>
+              </div>
+              <div class="itemcontainer">
+                  <img src="./tshirt.png" alt="">
+                  <div class="info">
+                      <p>Title : shirt</p>
+                      <p>price : 100</p>
+                  </div>
+                  
+                  <button>Remove from cart</button>
+              </div>
+              <div class="itemcontainer">
+                  <img src="./tshirt.png" alt="">
+                  <div class="info">
+                      <p>Title : shirt</p>
+                      <p>price : 100</p>
+                  </div>
+                  
+                  <button>Remove from cart</button>
+              </div>
+              <div class="itemcontainer">
+                  <img src="./tshirt.png" alt="">
+                  <div class="info">
+                      <p>Title : shirt</p>
+                      <p>price : 100</p>
+                  </div>
+                  
+                  <button>Remove from cart</button>
+              </div>
+              <div class="itemcontainer">
+                  <img src="./tshirt.png" alt="">
+                  <div class="info">
+                      <p>Title : shirt</p>
+                      <p>price : 100</p>
+                  </div>
+                  
+                  <button id="remove">Remove from cart</button>
+              </div>
+
+          </div>
+          <div class="right">
+              <div>checkout List</div>
+              <div id="purchaseitems">
+                  
+              </div>
+              <div class="total">
+                  <span>Total</span>
+                  <span id="price">$0</span>
+              </div>
+              <button id="checkOut">Click to checkOut</button>
+          </div>
+    </main>
+  <script src="./cart.js"></script>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  </body>
+</html>

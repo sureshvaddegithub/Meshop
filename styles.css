@@ -1,1 +1,83 @@
 /* Write styles here */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+*{
+    margin:0;
+    font-family: 'Inter', sans-serif;
+}
+
+nav{
+    background-color: black;
+    color:white;
+    padding:15px 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+nav .nav-links{
+    display: flex;
+    gap:30px;
+}
+
+nav a{
+    text-decoration: none;
+    color:#b2b2b2;
+}
+
+nav .brand a{
+    color:white;
+}
+nav .nav-links a:hover{
+    color:blue;
+    cursor: pointer;
+  }
+
+.meshop{
+    display: flex;
+    flex-direction: column;
+    gap:15px;
+    padding: 20px;
+}
+
+.meshop p:nth-child(1){
+    font-weight: 500;
+    font-size: 28px;
+}
+
+.meshop-login{
+    display: flex;
+
+}
+
+.meshop-login .btns{
+    display: flex;
+    align-items: flex-start;
+    gap:20px;
+}
+
+.meshop-login .btns button{
+   background-color: black;
+   color:white;
+   padding:6px 20px;
+   border-radius: 3px;
+   font-size: 16px;
+   border:none;
+   transition: .5s;
+
+}
+
+.meshop-login .btns button:hover{
+    transform: scaleX(1.1) scaleY(1.1);
+   
+}
+.meshop-login img{
+    height:450px;
+    width:80%;
+}
+
+#signup{
+    background-color: white;
+    color:black;
+    border:1px solid black;
+}
