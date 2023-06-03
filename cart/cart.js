@@ -2,7 +2,7 @@
 let curruser =JSON.parse(localStorage.getItem("current_user"));
 let mycart = JSON.parse(localStorage.getItem(curruser.tokenId));
 
-console.log(mycart);
+
 
 const itemsList = document.getElementById("itemsList");
 const  main = document.getElementsByTagName("main")
@@ -28,7 +28,7 @@ else{
 
 function renderCardItems(){
  
-  itemsList.innerHTML ="";
+  // itemsList.innerHTML ="";
 
   mycart.forEach(element => {
     itemsList.innerHTML+=
@@ -136,8 +136,10 @@ function reductPrice(element){
 let checkout = document.getElementById("checkOut");
 
 checkout.addEventListener("click",()=>{
-  checkout.style.display="none";
-  alert("your items is purchased");
-  localStorage.setItem(curruser.tokenId,JSON.stringify([]));
-  emptyCard();
+  localStorage.setItem("price",price.innerText.slice(1));
+   const link = document.createElement("a");
+  link.href = "../razorpay/index.html";
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
 })

@@ -36,7 +36,7 @@ const search = document.getElementById("search");
 const title = document.getElementById("title");
 
 let data = JSON.parse(localStorage.getItem("productsList"));
-
+const colorArray =["red",'black','blue','green','pink','lightblue','orange'];
 renderProductItems(data);
 
 let curruser = JSON.parse(localStorage.getItem("current_user"));
@@ -116,6 +116,7 @@ function renderProductItems(data){
   items.innerHTML ="";
 
   data.map(element =>{
+    let randomcolors = generateRandomColors();
      items.innerHTML +=
      `<div class="item" id= "item">
      <img src=${element.image} alt="Item" />
@@ -127,9 +128,9 @@ function renderProductItems(data){
        <div class="colors">
          Colors:
          <div class="row">
-           <div class="circle" style="background-color: #000"></div>
-           <div class="circle" style="background-color: #4938af"></div>
-           <div class="circle" style="background-color: #203d3e"></div>
+           <div class="circle" style="background-color: ${randomcolors[0]}"></div>
+           <div class="circle" style="background-color: ${randomcolors[1]}"></div>
+           <div class="circle" style="background-color: ${randomcolors[2]}"></div>
          </div>
        </div>
        <div class="row">Rating:${element.rating.rate}</div>
@@ -165,6 +166,16 @@ function renderProductItems(data){
   
 }
 
+
+
+function generateRandomColors(){
+  let colors =[];
+  for(let i = 0;i<3;i++){
+    colors.push(colorArray[parseInt(Math.random()*7)]);
+  }
+ return colors;
+}
+
 function findBySearch(value){
   let items = [];
   data.forEach((element)=>{
@@ -174,6 +185,8 @@ function findBySearch(value){
   })
   if(items.length == 0){
     title.innerText = "Couldnot find anything relavent to you";
+  }else{
+    title.innerText="";
   }
   renderProductItems(items);
 }
@@ -194,6 +207,42 @@ search.addEventListener("keyup",()=>{
   invokeDebounce(search.value);
 })
 
+
+const checkboxes = document.querySelectorAll("aside section:nth-child(4) input");
+
+
+const filter = document.getElementById("filterBtn");
+
+filter.addEventListener("click",()=>{
+  const checkedboxes = Array.from(checkboxes).filter((check)=>{
+        return check.checked;
+  })
+  let productItems =[];
+  checkedboxes.map(element=>{
+    let arr = element.id.split("-");
+    if(arr.length == 2){
+      let low = parseInt(arr[0]);
+      let high = parseInt(arr[1]);
+      data.forEach((element)=>{
+       let p = element.price;
+       if(p>=low && p<=high){
+        productItems.push(element);
+       }
+      })
+    }
+    else{
+      let min = parseInt(arr[0].slice(0,3));
+      data.forEach((element)=>{
+        let p = element.price;
+        if(p>=min ){
+         productItems.push(element);
+        }
+       })
+    }
+  })
+
+  renderProductItems(productItems);
+})
 
 
 
